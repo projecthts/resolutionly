@@ -1,5 +1,5 @@
 {
-  "name": "Fundle-service",
+  "name": "Resolutionly-service",
   "version": "1.0.0",
   "private": true,
   "author": "Auto Generated",
@@ -12,11 +12,6 @@
     "utest": "mocha dist/Test/**/*.ut.test.js --recursive --reporter spec "
   },
   "dependencies": {
-    "@types/bcrypt": "^3.0.0",
-    "@types/crypto-js": "^4.0.1",
-    "@types/nodemailer": "^6.4.0",
-    "@types/passport": "^1.0.5",
-    "bcrypt": "^5.0.0",
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
     "crypto-js": "^4.0.0",
@@ -24,16 +19,10 @@
     "express-session": "^1.17.1",
     "helmet": "4.4.1",
     "http-status-codes": "2.1.4",
-    "mongodb": "^3.6.3",
-    "mongoose": "^5.11.10",
-    "nodemailer": "^6.4.17",
     "openapi-validator-middleware": "3.2.1",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
     "path": "0.12.7",
     "prompt-sync": "^4.2.0",
-    "request": "^2.88.2",
-    "twilio": "^3.62.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/chai": "^4.2.16",
@@ -42,8 +31,6 @@
     "@types/express": "4.17.11",
     "@types/express-session": "^1.17.3",
     "@types/mocha": "^8.2.2",
-    "@types/mongodb": "^3.6.3",
-    "@types/passport-local": "^1.0.33",
     "@types/request": "^2.48.5",
     "@types/sinon": "^9.0.11",
     "chai": "^4.3.4",
