@@ -31,6 +31,6 @@ class ExampleCntrlr {
 }
 
 
-export let exampleCntrlr = new ExampleCntrlr();
+export let examplecntrlr = new ExampleCntrlr();
 
 
