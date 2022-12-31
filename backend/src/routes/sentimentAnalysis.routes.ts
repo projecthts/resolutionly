@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import axios from 'axios';
 import {keys} from '../support/Keys'
-// import textQuery from '../chatbot/chatbot'
+import {memeClassExport} from '../memes/memesHelper';
+import sentimentAnalysisHelper from '../sentimentAnalysis/sentimentAnalysisHelper';
 const sentimentAnalysisRoute = Router();
 
 sentimentAnalysisRoute.post('/analyse', (req:any, res: any) => {
@@ -9,30 +10,15 @@ sentimentAnalysisRoute.post('/analyse', (req:any, res: any) => {
 
 
         const {inputText} = req.body;
-        console.log(`inputText ${inputText}`)
-		const options = {
-			method: 'POST',
-			url: 'https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1',
-			headers: {
-				'content-type': 'application/json',
-				'x-rapidapi-host': 'text-analysis12.p.rapidapi.com',
-				'x-rapidapi-key': keys.config.NEXT_PUBLIC_RAPIDAPI_KEY
-			},
-			data: {language: 'english', text: inputText}
-		};
+		sentimentAnalysisHelper(inputText).then((response_out) => {
+			const compound_score: number = response_out;
+			return res.status(200).json({"compound": compound_score});
 
-		axios
-			.request(options)
-			.then(function (response) {
-                const result = response.data;
-                const compound_score = result.aggregate_sentiment.compound;
-
-				return res.status(200).json({"compound": compound_score});
-			})
-			.catch(function (error) {
-				console.error(`Error Occured - ${error}`);
-                return res.status(400);
-			});
+		}).catch(function (error) {
+			console.error(`Error Occured - ${error}`);
+			return res.status(400);
+		});
+			
 	} else {
 		return res.status(400);
 	}
