@@ -1,6 +1,5 @@
 class Keys{
 
-
     public config = {
     
         "type": "service_account",
@@ -14,18 +13,14 @@ class Keys{
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
         "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/newwork%40resolutionly-373221.iam.gserviceaccount.com",
         "session_id": "foo",
-        "languageCode": "en-US"
+        "languageCode": "en-US",
+        "NEXT_PUBLIC_RAPIDAPI_KEY": "f57fb1bb71msh559dcae6a819212p13f944jsn72c2682569d0"
     }
-
 
     constructor(){
 
     }
-
-
-    
 }
-
 
 
 export let keys = new Keys();
