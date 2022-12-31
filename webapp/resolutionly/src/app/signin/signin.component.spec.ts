@@ -11,7 +11,9 @@ describe('SigninComponent', () => {
       declarations: [ SigninComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(SigninComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

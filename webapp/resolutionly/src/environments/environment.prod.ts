@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  firebaseConfig: {
+  firebaseConfig : {
     apiKey: "AIzaSyCiBbRv4f-8qd6awF5WkYXt5ShtoGmB248",
     authDomain: "resolutionly.firebaseapp.com",
     projectId: "resolutionly",

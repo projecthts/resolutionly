@@ -1,17 +1,14 @@
 export let logindata = [
     {
-        "placeholder": "Enter Email",
+        "placeholder": "Email",
         "formname": "email",
         "type": "email",
-        "error": false,
-        "errormsg": ""
+        "patternerror": "Email is invalid"
     },
     {
-        "placeholder": "Enter Password",
+        "placeholder": "Password",
         "formname": "password",
         "type": "password",
-        "error": false,
-        "errormsg": ""
     }
 ]
 
@@ -21,51 +18,50 @@ export let regdata = [
         "placeholder": "Enter Name",
         "formname": "name",
         "type": "text",
-        "error": false,
-        "errormsg": ""
     },
 
     {
         "placeholder": "Enter Email",
         "formname": "email",
         "type": "email",
-        "error": false,
-        "errormsg": ""
+        "patternerror": "Email is invalid"
     },
 
     {
         "placeholder": "Enter Phone Number",
         "formname": "phone",
-        "type": "number",
-        "error": false,
-        "errormsg": ""
+        "type": "text",
+        "patternerror": "Phone is invalid. Please provide a 10 digit phone number."
     },
 
     {
         "placeholder": "Enter Password",
         "formname": "password",
         "type": "password",
-        "error": false,
-        "errormsg": ""
+        "patternerror": "Password should contain [a-z],[A-Z],[0-9],a special character"
     },
 
     {
         "placeholder": "Confirm Password",
         "formname": "confirmpassword",
         "type": "password",
-        "error": false,
-        "errormsg": ""
+        "patternerror": "Passwords don't match!"
     },
     {
         "placeholder": "Select Role",
         "value": null,
         "type": "dropdown",
-        "error": false,
-        "errormsg": "",
-        "options": [
+        "options": [{
+            "value": "1",
+            "placeholder": "Family Member"
+        },
         {
-            "value": "user",
-            "placeholder": "User"
+            "value": "2",
+            "placeholder": "Doctor"
+        },
+        {
+            "value": "3",
+            "placeholder": "Care Taker"
         }]
         
 

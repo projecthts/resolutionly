@@ -1,32 +1,42 @@
 export let navbar = [
     {
-        "role":"user",
         "name":"Home",
         "link":"/home",
     },
     {
-        "role":"user",
-        "name":"Plant Tracker",
-        "link":"/dashboard",
+        "name":"Doctor",
+        "link":"/consultation",
     },
     {
-        "role":"user",
-        "name":"FootPrint Calculator",
-        "link":"/footprint",
+        "name":"Family",
+        "link":"/family",
     },
     {
-        "role":"user",
-        "name":"Gaming Zone",
-        "link":"/createroom",
+        "name":"Medicine Delivery",
+        "link":"/meddelivery",
     },
     {
-        "role":"user",
-        "name":"Forest",
-        "link":"/forest",
+        "name":"Lab Test",
+        "link":"/lab",
     },
     {
-        "role":"user",
-        "name":"Analytics",
-        "link":"/analytics",
+        "name":"Caretakers",
+        "link":"/helper",
     },
 ]
+
+export let navbardoctor = [
+    {
+        "name":"Schedule",
+        "link":"/schedule",
+    },
+    {
+        "name":"Reports",
+        "link":"/form",
+    },
+    {
+        "name":"Profile",
+        "link":"/form",
+    }
+]
+
