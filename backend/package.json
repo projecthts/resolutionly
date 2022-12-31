@@ -22,7 +22,8 @@
     "openapi-validator-middleware": "3.2.1",
     "path": "0.12.7",
     "prompt-sync": "^4.2.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "twilio": "^3.84.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.16",

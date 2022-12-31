@@ -9,7 +9,6 @@ import * as session from 'express-session';
 import { InputValidationError } from 'openapi-validator-middleware';
 import { configuration } from './support/appConfig';
 import { examplecntrlr } from './controller/ExampleCntrlr';
-import { trycntrlr } from './controller/TryCntrlr';
 
 
 export class ServerAPI {
@@ -65,8 +64,8 @@ export class ServerAPI {
   */
   public setRouterMiddleWare(): void {
     this.apiApp.use('/v1/example', examplecntrlr.router);
-    this.apiApp.use('/v1/try', trycntrlr.router);
-    this.apiApp.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+    this.apiApp.use('/v1/try', /trycntrlr.router);
+		this.apiApp.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
       if (err instanceof InputValidationError) {
         return res.status(400).json({ more_info: JSON.stringify(err.errors) });
       } 
