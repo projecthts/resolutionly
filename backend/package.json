@@ -12,6 +12,7 @@
     "utest": "mocha dist/Test/**/*.ut.test.js --recursive --reporter spec "
   },
   "dependencies": {
+    "@google-cloud/dialogflow": "^5.4.0",
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
     "crypto-js": "^4.0.0",
