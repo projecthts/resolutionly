@@ -1,0 +1,131 @@
+
+<div class="main">
+  <div class="loginsignup">
+    <div class="imagerect"></div>
+    <div class="card">
+      <div class="authtitle">Login / SignUP</div>
+      <div class="error">
+        <strong>{{error}}</strong>
+    </div>
+
+      <div
+        class="slider"
+        [ngClass]="{
+          sliderslide: !login
+        }"
+      >
+        <div class="sliderloginreg">
+            
+          <form
+            [formGroup]="formlogin"
+            (ngSubmit)="submit()"
+            class="signupform l">
+            <div *ngFor="let x of signindata" class="inputfield">
+              <div class="inputlabel">{{ x.placeholder }}</div>
+              <input
+                placeholder="Enter {{ x.placeholder }}"
+                formControlName="{{ x.formname }}"
+                type="{{ x.type }}"/>
+              <div
+                *ngIf="
+                  formlog(x.formname).invalid &&
+                  (formlog(x.formname).dirty || formlog(x.formname).touched)
+                "
+                class="alert alert-danger">
+                <div *ngIf="formlog(x.formname).errors?.['required']">
+                  {{ x.formname }} is required.
+                </div>
+                <div *ngIf="formlog(x.formname).errors?.['pattern']">
+                  {{ x.patternerror }}
+                </div>
+              </div>
+            </div>
+            <div class="signup" (click)="move()">
+              <strong>Don't have an account?</strong>
+              <div class="btn6">Sign UP!</div>
+            </div>
+
+            <div class="login" (click)="submit()">
+              <br />
+              <div class="btn6" >Login</div>
+            </div>
+
+           
+          </form>
+        </div>
+
+
+
+        <div class="sliderloginreg">
+          <form [formGroup]="formreg" (ngSubmit)="submit()" class="signupform">
+            <div *ngFor="let x of signupdata" class="inputfield">
+              <div *ngIf="x.type != 'dropdown'">
+                <input
+                  placeholder="Enter {{ x.placeholder }}"
+                  formControlName="{{ x.formname }}"
+                  type="{{ x.type }}"
+                />
+                <div
+                  *ngIf="
+                    formregget(x.formname).invalid &&
+                    (formregget(x.formname).dirty ||
+                      formregget(x.formname).touched)
+                  "
+                  class="alert alert-danger"
+                >
+                  <div *ngIf="formregget(x.formname).errors?.['required']">
+                    {{ x.formname }} is required.
+                  </div>
+                  <div *ngIf="formregget(x.formname).errors?.['pattern']">
+                    {{ x.patternerror }}
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    formreg.hasError('notSame') &&
+                    x.formname == 'confirmpassword' &&
+                    !formregget('confirmpassword').errors?.['required']
+                  "
+                  class="alert alert-danger"
+                >
+                  Passwords don't match
+                </div>
+              </div>
+              <div *ngIf="x.type == 'dropdown'">
+                <mat-form-field>
+                  <mat-label style="font-size: 100%">{{
+                    x.placeholder
+                  }}</mat-label>
+                  <mat-select
+                    [(value)]="x.value"
+                    class="ip"
+                    style="font-size: 100%; border-bottom: none"
+                  >
+                    <div *ngFor="let y of x.options">
+                      <mat-option value="{{ y.value }}" class="options">
+                        {{ y.placeholder }}</mat-option
+                      >
+                    </div>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+           
+
+            <div class="login">
+            
+                Already have an account?
+                <div class="btn6"  (click)="move()">Login</div>
+            
+            </div>
+
+            <div class="signup" (click)="submit()">
+              <div class="btn6">SignUP</div><br/>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
