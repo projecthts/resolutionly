@@ -5,6 +5,10 @@ import * as helmet from 'helmet';
 import * as http from 'http';
 import * as path from 'path';
 import * as session from 'express-session';
+import * as bodyParser from 'body-parser';
+import routes from './routes';
+
+
 
 import { InputValidationError } from 'openapi-validator-middleware';
 import { configuration } from './support/appConfig';
@@ -50,11 +54,15 @@ export class ServerAPI {
       origin: ['http://localhost:4200', 'http://127.0.0.1:4200', 'http://localhost:4400', 'http://localhost:5001', 'https://fundle-f51a5.web.app'],
       credentials: true
     }));
+    this.apiApp.use(bodyParser.urlencoded({extended: false}));
+    this.apiApp.use(bodyParser.json());
     this.apiApp.use(cookieParser());
     this.apiApp.use(express.json());
 
     this.apiApp.use(express.urlencoded({ 'extended': true }));
     this.apiApp.use(express.static(path.join(__dirname, '..', 'static')));
+
+    this.apiApp.use(routes);
   }
 
   /**
@@ -77,4 +85,3 @@ const api: ServerAPI = new ServerAPI();
 api.setMiddleware();
 api.setRouterMiddleWare();
 api.start();
-
