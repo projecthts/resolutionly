@@ -13,8 +13,8 @@ export interface response_meme {
 export interface query_joke_availablity {
     joke: string;
     image: string;
-    jokeAvailable: boolean
-
+    jokeAvailable: boolean;
+    response_from_dialogflow: Object | string;
 }
 
 

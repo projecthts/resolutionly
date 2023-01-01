@@ -5,6 +5,8 @@ import { resolve } from 'path';
 import {response_meme, query_joke_availablity} from '../support/Interfaces'
 import sentimentAnalysisHelper from '../sentimentAnalysis/sentimentAnalysisHelper';
 import meme from '../routes/memes.routes';
+import {keys} from '../support/Keys'
+import textQuery from '../chatbot/chatbot'
 
 class memeClass{
     public memeRequest (): Promise<response_meme> {    
@@ -41,7 +43,7 @@ class memeClass{
     }
 
     
-    public returnJokeIfSad (inputText: string): Promise<query_joke_availablity> {
+    public returnJokeIfSadElseDialogflow (inputText: string): Promise<query_joke_availablity> {
 
         return new Promise((resolve, reject) => {
             sentimentAnalysisHelper(inputText).then((response_out) => {
@@ -52,7 +54,8 @@ class memeClass{
                 const finalResponse: query_joke_availablity = {
                     joke: "",
                     image: "",
-                    jokeAvailable: false
+                    jokeAvailable: false,
+                    response_from_dialogflow: ""
 
                 }
                 
@@ -64,21 +67,20 @@ class memeClass{
                             finalResponse.joke = jokeFetched.joke;
                             finalResponse.image = jokeFetched.image;
                             finalResponse.jokeAvailable = true;
-                            
+
                             resolve(finalResponse);
                             // return finalResponse;
                         }).catch((err) => {
                             console.log(`Error Occured - ${err}`);
                             reject(err);
-                        })
-
-                
-                    
+                        })  
                     
                 }else{
-                    
-                    resolve(finalResponse);
 
+                    this.getResponseFromDialogFlow(inputText).then(response_console_dialogflow => {
+                        finalResponse.response_from_dialogflow = response_console_dialogflow;
+                        resolve(finalResponse);
+                    })
                 }
 
             }).catch(function (error) {
@@ -88,10 +90,30 @@ class memeClass{
 
         })
 
-
-
     }
 
+    public getResponseFromDialogFlow(inputText: string): Promise<any> {
+
+        const userId  = keys.config.session_id;
+
+        return new Promise((resolve, reject) => {
+            textQuery(inputText, userId).then((res) => {
+                const resultQuery = res;
+                const response_object = resultQuery[0];
+            
+                const response_console_dialogflow = {
+                  "fulfillmentText": response_object.queryResult.fulfillmentText,
+                }
+            
+                resolve(response_console_dialogflow);
+            
+              }).catch(function (error) {
+                console.error(`Error Occured - ${error}`);
+                reject(error);
+            });
+        })
+
+    }
 
 }
 

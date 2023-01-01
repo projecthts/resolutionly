@@ -17,7 +17,7 @@ chatBot.post('/text_query', (request:any, response: any) => {
       "fulfillmentText": response_object.queryResult.fulfillmentText,
     }
 
-    return response.json(response_object);
+    return response.json(response_console);
 
   });
 
