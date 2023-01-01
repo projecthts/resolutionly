@@ -14,7 +14,7 @@ export interface query_joke_availablity {
     joke: string;
     image: string;
     jokeAvailable: boolean;
-    response_from_dialogflow: Object | string;
+    response_from_dialogflow: string;
 }
 
 
