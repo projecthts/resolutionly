@@ -17,10 +17,10 @@
 }
 
 .moodboard {
-    // background-color: rgb(252, 252, 252);
+    background-color: rgb(252, 252, 252);
     height: 30vh;
     width: 80%;
-    background-color: var(--dpink);
+    // background-color: var(--dpink);
     // display: flex;
     // border-top: solid thin silver;
 }
@@ -286,7 +286,8 @@
 
 .outwardnote{
     position: absolute;
-    background-color: var(--grey);
+    // background-color: var(--grey);
+    background-color:rgba(128, 128, 128, 0.281);
     height: 80vh;
     width: 70vw;
     top: 10%;
@@ -327,7 +328,7 @@
 }
 
 .tracker{
-    // background-color:rgba(128, 128, 128, 0.281);
+    
     // border: blur(8px) gray;
     // border-radius: 10px;
     // filter: blur(8px);

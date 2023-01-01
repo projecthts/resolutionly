@@ -35,17 +35,35 @@ export class AuthService {
   }
 
   insertuserdata(user:any, usercred:any) {
-    return this.db.doc(`Users/${usercred.user.uid}`).set({
-      email: user.email,
-      name: user.name,
-      phone: user.phone,
-      // role: user.role,
+    return new Promise((resolve, reject) => {
+      this.db.doc(`Users/+91${user.phone}`).set({
+        email: user.email,
+        name: user.name,
+        phone: user.phone,
+        uid: usercred.user.uid
+      }).then(res => {
+        this.db.doc(`Index/${usercred.user.uid}`).set({
+          phone: user.phone,
+        })
+        .then(res => resolve(res))
+      })
     })
   }
 
   getprofile(useruid:any) {
-    return this.db.collection("Users").doc(useruid).snapshotChanges();
+    return new Promise((resolve, reject) => {
+      this.getPhonenumber(useruid).subscribe((res:any) => {
+        this.db.collection("Users").doc("+91"+ res.payload.data()["phone"]).snapshotChanges().subscribe(res => {
+          resolve(res);
+        })
+      })
+    })
   }
+
+  getPhonenumber(useruid:any){
+    return this.db.collection("Index").doc(useruid).snapshotChanges();
+  }
+
   
   logout() {
     return this.af.signOut();

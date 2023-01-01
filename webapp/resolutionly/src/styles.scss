@@ -1,4 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%;}
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import "~bootstrap/dist/css/bootstrap.css";
+// @import "~aos/dist/aos.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    margin: 0;
+    padding: 0;
+}
+
+span.sr-only{
+    visibility: hidden;
+    display: none;
+}
+
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+:root {
+    --col1d: rgb(53,64,27);
+    --col1m: rgb(97, 117, 49);
+    --col1l: rgb(147, 175, 80);
+    --col2d:	rgb(107,29,13);
+    --col2m: rgb(145, 40, 20);
+    --col2l: rgb(212, 64, 35);
+    --col2vl: rgb(247, 126, 102);
+    --col3d: rgb(142,158,55);
+    --col3m: rgb(193, 212, 84);
+    --col3l: rgb(221, 240, 113);
+    --col3vl: rgb(245, 255, 191);
+    // --col4: #45a5ff;
+    --col4: #00c6df;
+    --col4d:rgb(45, 88, 72);
+    --col4l: rgb(66, 126, 103);
+    --col4vl: rgb(123, 228, 188);
+    --col5: rgb(212, 212, 212);
+    --appbg: #FFF4F4;
+ }
+
+.custbutton {
+    background-color: var(--col4);
+    position: relative;
+    border-radius: 2px;
+    padding: 2% 5%;
+    font-size: 150%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    //box-shadow: 5px 2px 2px silver;
+    border: solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+ }
+
+ @font-face {
+    font-family: country;
+    src: url(assets/fonts/CountrysideTwo-r9WO.ttf) format("opentype");
+  }
+
+  
+ @font-face {
+    font-family: handwriting;
+    src: url(assets/fonts/GrestalScriptDemoRegular-dBYX.ttf) format("opentype");
+  }
+  *{
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
