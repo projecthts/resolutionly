@@ -13,9 +13,19 @@
     height: 100vh;
     background-color: white;
     background: linear-gradient(to bottom, rgb(66, 126, 103), #ffffff 10%);
-    
+    background-image: url("../../assets/media/images/homeland.png");
+    // background-image: url('https://media.giphy.com/media/Y00rljjHivBv1fHD5n/giphy.gif');
 }
-
+.main1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 100%;
+    align-items: center;
+    height: 100vh;
+    background: url('https://media.giphy.com/media/eHtsTXqsWyWK5L5mrl/giphy.gif');
+    background-size: cover;
+}
 .titlewebsite{
     width: 30vw;
     height: 50%;
@@ -32,7 +42,7 @@
     font-size: 500%;
     width: 30vw;
     height: 100%;
-    background-image: url("../../assets/images/Mana\ Stithi.png");
+    background-image: url("../../assets/media/images/tlogo.png");
     background-size: 100% 100%;
     
 }
@@ -49,7 +59,7 @@
     display: flex;
     border-radius: 2%;
     flex-direction: column;
-    background-image: url("../../assets/images/mentalhealth.jpg");
+    background-image: url("../../assets/media/images/logo.jpeg");
     background-size: 100% 100%;
     overflow: hidden;
     position: relative;
@@ -92,12 +102,12 @@
     position: relative;
     font-size: 150%;
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 .rightdeets::after{
     content: "";
-    border: black solid thin;
+    border: white solid thin;
     border-radius: 10px;
     position: absolute;
     width: 100%;
@@ -130,11 +140,13 @@
     width: 40vw;
     background-color: rgba(245, 245, 245);
     background-color: white;
+    // opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    
     // background: linear-gradient(90deg, #c7e4ff, #bab6f0 100%);
 }
 
@@ -177,7 +189,7 @@
 
 .logintitle{
     font-size: 200%;
-    color: black;
+    color: white;
     flex-basis: 10%;
 }
 
