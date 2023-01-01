@@ -37,7 +37,7 @@ class memeClass{
                 resolve(response_out);
             })
             .catch(function (error) {
-                console.error(`Error Occured - ${error}`);
+                console.error(`Error1 Occured - ${error}`);
                 reject(error.toString());
             });
         })
@@ -119,7 +119,7 @@ class memeClass{
                 }
 
             }).catch(function (error) {
-                console.error(`Error Occured - ${error}`);
+                console.error(`Error2 Occured - ${error}`);
                 reject(error);
             });
 
@@ -144,7 +144,7 @@ class memeClass{
                 resolve(response_console_dialogflow.fulfillmentText);
             
               }).catch(function (error) {
-                console.error(`Error Occured - ${error}`);
+                console.error(`Error3 Occured - ${error}`);
                 reject(error);
             });
         })

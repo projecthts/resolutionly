@@ -25,7 +25,7 @@ const sentimentAnalysisHelper = (inputText: string): Promise<number> => {
 
                 resolve(compound_score);
         }).catch(function (error) {
-            console.error(`Error Occured - ${error}`);
+            console.error(`Error5 Occured - ${error}`);
             reject(error);
         })
     })
