@@ -7,6 +7,7 @@ import sentimentAnalysisHelper from '../sentimentAnalysis/sentimentAnalysisHelpe
 import meme from '../routes/memes.routes';
 import {keys} from '../support/Keys'
 import textQuery from '../chatbot/chatbot'
+import {firebaseUtilities} from '../ViewModels/FirebaseUtilities'
 
 class memeClass{
     public memeRequest (): Promise<response_meme> {    
@@ -43,9 +44,42 @@ class memeClass{
     }
 
     
-    public returnJokeIfSadElseDialogflow (inputText: string): Promise<query_joke_availablity> {
+    public returnJokeIfSadElseDialogflow (inputText: string, inputMobileNumber: string): Promise<query_joke_availablity> {
 
         return new Promise((resolve, reject) => {
+            console.log("Here I am ")
+            console.log(`inputText  - ${inputText}`)
+            const resolutionInputMatch: string = "resolution: ";
+            const reminderInputMatch: string = "reminder: "
+            
+            // console.log(string.includes(substring));  //true
+            
+
+            if(inputText.includes(resolutionInputMatch)){
+                const splittedStringArray = inputText.split(resolutionInputMatch);
+
+                const resolutionInput = splittedStringArray[1];
+                console.log(`splittedStringArray ${splittedStringArray[1]}`);
+
+                firebaseUtilities.addResolution(inputMobileNumber, resolutionInput).then((res: any) => {
+                    console.log(`Adding the Resolution ${resolutionInput} to DB`)
+                    
+                  }).catch((err) => {
+                    reject(err);
+                  })
+            }
+
+            // if(inputText.includes(reminderInputMatch)){
+            //     const splittedStringArray = inputText.split(reminderInputMatch);
+                
+            //     const reminderInput= splittedStringArray[1];
+
+
+            //     console.log(`splittedStringArray ${splittedStringArray[1]}`);
+            // }
+
+
+
             sentimentAnalysisHelper(inputText).then((response_out) => {
                 console.log("Inside class");
                 const compound_score: number = response_out;
@@ -78,6 +112,7 @@ class memeClass{
                 }else{
 
                     this.getResponseFromDialogFlow(inputText).then(response_console_dialogflow => {
+                        // console.log(`response_console_dialogflow ${response_console_dialogflow}`)
                         finalResponse.response_from_dialogflow = response_console_dialogflow;
                         resolve(finalResponse);
                     })
@@ -95,6 +130,7 @@ class memeClass{
     public getResponseFromDialogFlow(inputText: string): Promise<any> {
 
         const userId  = keys.config.session_id;
+        // console.log("Inside getResponseFromDialogFlow")
 
         return new Promise((resolve, reject) => {
             textQuery(inputText, userId).then((res) => {
@@ -104,7 +140,7 @@ class memeClass{
                 const response_console_dialogflow = {
                   "fulfillmentText": response_object.queryResult.fulfillmentText,
                 }
-            
+                // console.log(`response_object ${JSON.stringify(response_object.queryResult)}`)
                 resolve(response_console_dialogflow.fulfillmentText);
             
               }).catch(function (error) {
