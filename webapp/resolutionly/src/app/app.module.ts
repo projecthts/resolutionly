@@ -22,6 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SigninComponent } from './signin/signin.component';
 import { GmapsComponent } from './gmaps/gmaps.component';
+import { LetterToFutureSelfComponent } from './letter-to-future-self/letter-to-future-self.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { GmapsComponent } from './gmaps/gmaps.component';
     SigninComponent,
     HomeComponent,
     DashboardComponent,
-    GmapsComponent
+    GmapsComponent,
+    LetterToFutureSelfComponent
   ],
   imports: [
     BrowserModule,
