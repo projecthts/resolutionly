@@ -21,13 +21,15 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SigninComponent } from './signin/signin.component';
+import { GmapsComponent } from './gmaps/gmaps.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    GmapsComponent
   ],
   imports: [
     BrowserModule,

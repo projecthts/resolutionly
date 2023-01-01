@@ -1,4 +1,4 @@
-<!-- <div class="main">
+<div class="main">
     
     <div class="module" style="display: flex;">
         <div class="title">
@@ -6,11 +6,11 @@
         </div>
         <div class = "homeimage"></div>
         <div class="modulebody" style="display: flex;">
-            <div style="font-size: 150%; padding-top: 1%;">Your Reach</div>
+            <div style="font-size: 150%; padding-top: 1%;">Your Statics</div>
             <div class="charts" style="display: flex;">
-                <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">YouTube 
-                    <p style="font-size: x-small;">10,798 impressions</p>
-                    <p style="font-size: x-small;color: rgb(122, 120, 120);">+5000 in the last 7 days</p>
+                <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">Goals
+                    <p style="font-size: x-small;">Goals set Vs Goals Achieved</p>
+                    <p style="font-size: x-small;color: rgb(122, 120, 120);">+1 in the last 7 days</p>
                     <canvas baseChart
                     [type]="'pie'"
                     [datasets]="pieChartDatasets"
@@ -20,30 +20,22 @@
                     [legend]="pieChartLegend">
                   </canvas>
                 </div>
-                <div style="font-size: 100%;  height:fit-content; width: fit-content;text-align: center;">Twitter
-                    <p style="font-size: x-small;">7,426 impressions</p>
+                <div style="font-size: 100%;  height:fit-content; width: fit-content;text-align: center;">Sentiment Analysis
+                    <p style="font-size: x-small;">7,426 messages</p>
                     <p style="font-size: x-small;color: rgb(122, 120, 120);">+400 in the last 7 days</p>
                     <canvas baseChart
-                    [type]="'pie'"
-                    [datasets]="pieChartDatasets"
-                    [labels]="pieChartLabels"
-                    [options]="pieChartOptions"
-                    [plugins]="pieChartPlugins"
-                    [legend]="pieChartLegend">
-                    </canvas>
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [plugins]="barChartPlugins"
+                    [legend]="barChartLegend"
+                    [type]="'bar'">
+            </canvas>
                 </div>
-                <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">Insta
-                    <p style="font-size: x-small;">2,094 impressions</p>
-                    <p style="font-size: x-small;color: rgb(122, 120, 120);">+273 in the last 7 days</p>
-                    <canvas baseChart
-  [type]="'pie'"
-  [datasets]="pieChartDatasets"
-  [labels]="pieChartLabels"
-  [options]="pieChartOptions"
-  [plugins]="pieChartPlugins"
-  [legend]="pieChartLegend">
-</canvas></div>
-                <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">Git
+                <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">Green Trees
+                    <p style="font-size: x-small;">2 Trees Planted in the current year</p>
+                    <p style="font-size: x-small;color: rgb(122, 120, 120);">Go green!</p>
+                    <div style="color: darkgreen;font-size: xx-large;"> 200% increase</div></div>
+                <!-- <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">Git
                     <p style="font-size: x-small;">1,735 impressions</p>
                     <p style="font-size: x-small;color: rgb(122, 120, 120);">+371 in the last 7 days</p>
                     <canvas baseChart
@@ -53,8 +45,8 @@
   [options]="pieChartOptions"
   [plugins]="pieChartPlugins"
   [legend]="pieChartLegend">
-</canvas></div>
-                <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">TikTok
+</canvas></div> -->
+                <!-- <div style="font-size: 100%; height:fit-content; width: fit-content;text-align: center;">TikTok
                     <p style="font-size: x-small;">21,453 impressions</p>
                     <p style="font-size: x-small;color: rgb(122, 120, 120);">+8740 in the last 7 days</p>
                     <canvas baseChart
@@ -64,7 +56,7 @@
   [options]="pieChartOptions"
   [plugins]="pieChartPlugins"
   [legend]="pieChartLegend">
-</canvas></div>
+</canvas></div> -->
             </div>
         </div>
         <div class="modulebody2" style="display: flex;">
@@ -94,12 +86,12 @@
             
     </div>
     
-</div> -->
-<canvas baseChart
+</div>
+<!-- <canvas baseChart
   [type]="'pie'"
   [datasets]="pieChartDatasets"
   [labels]="pieChartLabels"
   [options]="pieChartOptions"
   [plugins]="pieChartPlugins"
   [legend]="pieChartLegend">
-</canvas>
+</canvas> -->
