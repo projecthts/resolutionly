@@ -2,7 +2,7 @@
 
     
     <div class="story">
-        <form [formGroup]="storyform" class="enterstory">
+        <form [formGroup]="storyform" class="enterstory" style="color:white">
             Today's Entry
             <textarea placeholder="Type your entry" formControlName="content" type="text" class="ip"></textarea>
             <button class="custbutton btn-4" style="font-size: 50%;" (click)="addstory()">Write to diary</button>
@@ -61,8 +61,8 @@
             </div>
         </div>
         <div class="buttonslide" (click)="togglein()">
-            <div style="font-family: country; font-size: 150%;">
-                Track your carbon footprint!
+            <div style="font-family: country; font-size: 150%;color:white">
+                Track your Journal entries!
             </div>
             <!-- <div class = "inbutton" style="border: solid thick black; border-radius: 50%; height: 5vh; width: 5vh; background-color: black; color: white;">
                     ->
