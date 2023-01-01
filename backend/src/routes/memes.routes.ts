@@ -31,14 +31,14 @@ meme.get('/getRandom', (req:any, res: any) => {
 })
 
 // For testing of the made function
-meme.post('/returnJokeIfSad', (req:any, res: any) => {
+meme.post('/returnJokeIfSadElseDialogflow', (req:any, res: any) => {
     if (req.method === 'POST') {
 
         const {inputText} = req.body;
         console.log(`inputText ${inputText}`)
 
-        
-        memeClassExport.returnJokeIfSad(inputText).then((response_out) => {
+
+        memeClassExport.returnJokeIfSadElseDialogflow(inputText).then((response_out) => {
             console.log(`response_out ${JSON.stringify(response_out)}`);
             return res.status(200).json(response_out);
         }).catch((err) => {
