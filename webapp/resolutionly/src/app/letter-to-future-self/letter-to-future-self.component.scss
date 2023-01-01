@@ -250,6 +250,83 @@
     font-family: handwriting;
 }
 
+.ipdate {
+    width: 25vw;
+    height: 10vh;
+    font-size: 70%;
+    font-family: handwriting;
+}
+
+.resolutionInput{
+    display: flex;
+    // justify-content: space-evenly;
+    width: 100%;
+}
+
+.ipres{
+    height: 5vh;
+    // width: 100%;
+    font-size: 70%;
+    font-family: handwriting;
+}
+
+.ipresres{
+    width: 70%;
+}
+
+.ipresbut{
+    // margin: 2%;
+    width: 20%;
+    font-size: 100%;
+    background-color: var(--col4);
+    border-radius: 2px;
+    margin: 0 2%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    //box-shadow: 5px 2px 2px silver;
+    border: solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.resTitle{
+    text-align: center;
+    font-family: handwriting;
+    font-size: 200%;
+    
+}
+
+.resolutions{
+    margin-top: 5vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.resolutionRow{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.res{
+    width: 70%;
+}
+
+.progress{
+    width: 10%;
+}
+
+.edit{
+    cursor: pointer;
+    width: 5%;
+}
+
+.cross{
+    cursor: pointer;
+    width: 5%;
+}
+
 .date {
     font-size: 150%;
     font-family: handwriting;

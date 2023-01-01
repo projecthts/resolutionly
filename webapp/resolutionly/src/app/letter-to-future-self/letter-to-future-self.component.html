@@ -1,21 +1,40 @@
-<!-- <div class="main">
+<div class="main">
 
     
     <div class="story">
         <form [formGroup]="letterform" class="enterstory">
-            Today's Entry
+            Letter To Self
             <textarea placeholder="Type your entry" formControlName="content" type="text" class="ip"></textarea>
-            <button class="custbutton btn-4" style="font-size: 50%;" (click)="addstory()">Write to diary</button>
+            <input placeholder="" formControlName="reminder" type="date" class="ipdate">
+            <button class="custbutton btn-4" style="font-size: 50%;" (click)="addstory()">Write to self</button>
         </form>
+
+
         <div class="stories">
-            <button class="custbutton btn-4" (click)="getstories()" style="margin-left: 80%;">Get all entries</button>
+            <form [formGroup]="resolutionform" class = "resolutionInput">
+                <input placeholder="Enter resolution" formControlName="resolution" type="text" class="ipres ipresres">
+                <input placeholder="Enter Progress" formControlName="progress" type="number" class="ipres">
+                <button class="ipresbut" (click)="addResolution()">Add Resolution</button>
+            </form>
+
+            <!-- <button class="custbutton btn-4" (click)="getstories()" style="margin-left: 80%;">Get all entries</button>
             <div class="storyouter" *ngFor="let x of stories2; let i = index">
                 <div class="date">{{getdate(stories2[i].payload.doc.id)}}</div>
                 <div class="storyinner" *ngFor="let y of stories[getid(x)]">
                     <div class="storytime">{{y.time}}</div>
                     <div class="storystory">{{y.story}}</div>
                 </div>
+            </div> -->
+
+            <div class = "resolutions">
+                <div class = "resTitle"> Resolutions</div>
+                <div class="resolutionRow" *ngFor="let x of resolutions">
+                        <div class = "res">{{x.payload.doc.data().resolution}}</div>
+                        <div class = "progress">{{x.payload.doc.data().progress}}</div>
+                        <div class = "edit" (click) = "editResolution(x)">&#9998;</div>
+                        <div class = "cross" (click) = "deleteResolution(x.payload.doc.id)">&#9587;</div>
+                </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>
