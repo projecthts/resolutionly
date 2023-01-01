@@ -48,6 +48,21 @@ class Firebase {
               })
         })
     }
+
+    public addLetterToSelf(letter: string, date: Date, phoneNumber: string): Promise<any>{
+        return new Promise((resolve, reject) => {
+            this.addDoc(this.collection(this.db, `Users/${phoneNumber}/LetterToSelf/`), {
+                letter: letter,
+                date: date
+              })
+              .then((res: any) => {
+                resolve(res)
+              })
+              .catch((err) => {
+                reject(err)
+              })
+        })
+    }
 }
 
 export let firebaseUtilities = new Firebase();

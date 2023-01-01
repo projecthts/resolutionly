@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-letter-to-future-self',
@@ -12,4 +13,8 @@ export class LetterToFutureSelfComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  letterform = new FormGroup({
+    content: new FormControl(' '),
+    reminder: new FormControl(' ')
+  })
 }
