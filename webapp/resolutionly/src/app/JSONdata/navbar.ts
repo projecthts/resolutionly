@@ -4,39 +4,11 @@ export let navbar = [
         "link":"/home",
     },
     {
-        "name":"Doctor",
-        "link":"/consultation",
+        "name":"Journal",
+        "link":"/journal",
     },
     {
-        "name":"Family",
-        "link":"/family",
-    },
-    {
-        "name":"Medicine Delivery",
-        "link":"/meddelivery",
-    },
-    {
-        "name":"Lab Test",
-        "link":"/lab",
-    },
-    {
-        "name":"Caretakers",
-        "link":"/helper",
-    },
-]
-
-export let navbardoctor = [
-    {
-        "name":"Schedule",
-        "link":"/schedule",
-    },
-    {
-        "name":"Reports",
-        "link":"/form",
-    },
-    {
-        "name":"Profile",
-        "link":"/form",
+        "name":"Dashboard",
+        "link":"/dashboard",
     }
 ]
-

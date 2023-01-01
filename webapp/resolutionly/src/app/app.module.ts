@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SigninComponent } from './signin/signin.component';
 import { GmapsComponent } from './gmaps/gmaps.component';
 import { LetterToFutureSelfComponent } from './letter-to-future-self/letter-to-future-self.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LetterToFutureSelfComponent } from './letter-to-future-self/letter-to-f
     HomeComponent,
     DashboardComponent,
     GmapsComponent,
-    LetterToFutureSelfComponent
+    LetterToFutureSelfComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

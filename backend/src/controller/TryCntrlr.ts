@@ -4,6 +4,7 @@ import { Validator } from '../support/Validator';
 import { TryModel } from '../ViewModels/TryModel';
 
 import { waHelperFunc } from '../support/whatsapp-send-message.js'
+import {firebaseUtilities as fu} from '../ViewModels/FirebaseUtilities'
 
 class TryCntrlr {
 
@@ -25,15 +26,15 @@ class TryCntrlr {
     */
     public static setRouterMiddleWare(router: express.Router): void {
     router.route('/')
-    .post(TryCntrlr.try);
+    .get(TryCntrlr.try);
     }
 
     public static try(req: express.Request, res: express.Response){
         // let greeting: String = req.query.name?.toString()!;
         console.log("Hit try");
-        waHelperFunc.sendMessage("Hello", "whatsapp:+919987994940")
+        fu.addResolution("+919987994940", "Hi I am resolution")
         .then(ress => {
-            res.status(200).send("Hello, " + ress);
+            res.status(200).send("Hello, ");
         })
         .catch(err => {
             res.status(500).send("Error" + err);
