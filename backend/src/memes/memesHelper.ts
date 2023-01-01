@@ -105,7 +105,7 @@ class memeClass{
                   "fulfillmentText": response_object.queryResult.fulfillmentText,
                 }
             
-                resolve(response_console_dialogflow);
+                resolve(response_console_dialogflow.fulfillmentText);
             
               }).catch(function (error) {
                 console.error(`Error Occured - ${error}`);
