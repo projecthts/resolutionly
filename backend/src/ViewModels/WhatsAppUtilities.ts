@@ -5,7 +5,7 @@ import { waHelperFunc } from '../support/whatsapp-send-message.js';
 class WhatsAppUtilities {
     public respond(mymessage: string, senderID: string): Promise<null>{
         return new Promise((resolve, reject) => {
-            mc.returnJokeIfSadElseDialogflow(mymessage).then(res => {
+            mc.returnJokeIfSadElseDialogflow(mymessage, senderID).then(res => {
                 var response = "";
                 if (res.jokeAvailable){
                     response = res.joke;
