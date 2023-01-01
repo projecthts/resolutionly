@@ -13,8 +13,16 @@ class WhatsAppUtilities {
                 else{
                     response = res.response_from_dialogflow;
                 }
-                waHelperFunc.sendMessage(response, senderID)
-            });
+                waHelperFunc.sendMessage(response, senderID).then(res => {
+                    resolve(null)
+                })
+                .catch(err => {
+                    reject(err)
+                })
+            })
+            .catch(err => {
+                reject(err)
+            })
         })
     }
 }
