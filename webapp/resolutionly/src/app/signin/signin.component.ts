@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
   error: any;
   errormessage:any;
 
-  selectedrole: any;
+  // selectedrole: any;
   signindata: any;
   signupdata: any;
 
@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit {
       })
     }
     else{
-      this.formreg.get("role")?.setValue(this.signupdata[5].value);
+      // this.formreg.get("role")?.setValue(this.signupdata[5].value);
       this.as.signup(this.formreg.value).then(res => {
         this.router.navigate(['/home']);
       })
@@ -51,7 +51,7 @@ export class SigninComponent implements OnInit {
     email: new FormControl(''),
     phone: new FormControl(''),
     password: new FormControl(''),
-    role: new FormControl('user'),
+    // role: new FormControl('user'),
     confirmpassword: new FormControl(''),
   })
   

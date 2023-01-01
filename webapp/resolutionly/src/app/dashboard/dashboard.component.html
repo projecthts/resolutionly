@@ -1,0 +1,134 @@
+<div class="main">
+
+    
+    <div class="story">
+        <form [formGroup]="storyform" class="enterstory">
+            Today's Entry
+            <textarea placeholder="Type your entry" formControlName="content" type="text" class="ip"></textarea>
+            <button class="custbutton btn-4" style="font-size: 50%;" (click)="addstory()">Write to diary</button>
+        </form>
+        <div class="stories">
+            <button class="custbutton btn-4" (click)="getstories()" style="margin-left: 80%;">Get all entries</button>
+            <div class="storyouter" *ngFor="let x of stories2; let i = index">
+                <div class="date">{{getdate(stories2[i].payload.doc.id)}}</div>
+                <div class="storyinner" *ngFor="let y of stories[x.payload.doc.id]">
+                    <div class="storytime">{{y.time}}</div>
+                    <div class="storystory">{{y.story}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="outwardnote" [ngClass]="{
+        'outwardnoteout': !in, 
+        'outwardnotein': in
+    }">
+
+        <div class="tracker">
+            <div class="moodboard">
+                <div class = "months">
+                        <div class = "month" *ngFor = "let m of mshort">
+                            {{m}}
+                        </div>
+                </div>
+                <div class = "cal">
+                    
+                    <div class = "days">
+                        <div *ngFor="let x of ['Sun', '', 'Tue', '', 'Thr', '', 'Sat']" style="height: 100%; border: solid thin black;">
+                            {{x}}
+                        </div>
+                        
+                    </div>
+                    <div class="moods">
+                        <div class="mood" *ngFor="let y of temp; let j = index">
+                            <div class="moodbox" *ngFor="let x of [0, 1, 2, 3, 4, 5, 6]; let i = index"
+                                #tooltip="matTooltip" matTooltip={{daynumbertodate((j*7)+i)}} [matTooltipPosition]="'above'"
+                                [ngClass]="{
+                            'col0': usermoods[(j*7) + i].mood == '0', 
+                            'col1': usermoods[(j*7) + i].mood == '1', 
+                            'col2': usermoods[(j*7) + i].mood == '2', 
+                            'col3': usermoods[(j*7) + i].mood == '3', 
+                            'col4': usermoods[(j*7) + i].mood == '4', 
+                            'col5': usermoods[(j*7) + i].mood == '5' 
+                        }" (click) = "getstory(usermoods[(j*7) + i].id)">
+    
+                            </div>
+                        </div>
+                         
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="feeling">
+                <div class="feelingcont">
+                    <div class="howfeeling">
+                        How are your plants today? --> Pick one -->
+                    </div>
+                    <div class="colorpanel">
+                        <div class="coll col{{i}}" *ngFor="let i of [0, 1, 2, 3, 4, 5]" (click)="addmood(i)">
+                            <div class="img img{{i}}">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class = "emotions">
+                <div class = "emotionset" >
+                    <div style="display: flex;" *ngFor="let i of [0, 1, 2]">
+                        <div class="img img{{i}}"></div>
+                        <div>{{plants[i]}}</div>
+                    </div>
+                </div>
+                <div class = "emotionset" style="margin-left: 5%;">
+                    <div style="display: flex;" *ngFor="let i of [3, 4, 5]">
+                        <div class="img img{{i}}"></div>
+                        <div>{{plants[i]}}</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="buttonslide" (click)="togglein()">
+            <div style="font-family: country; font-size: 150%;">
+                Track your carbon footprint!
+            </div>
+            <!-- <div class = "inbutton" style="border: solid thick black; border-radius: 50%; height: 5vh; width: 5vh; background-color: black; color: white;">
+                    ->
+            </div> -->
+        </div>
+    </div>
+    <div class="title">
+        Plant Tracker
+    </div>
+    <!-- <div class="moodboard">
+        <div class = "moods">
+            <div class = "mood" *ngFor = "let x of usermoods">
+                <div class = "moodbox" *ngFor = "let ym of moods; let y = index" (click) = "getstory(x)" [ngClass] = "{
+                    'col0': x.payload.doc.data().mood == '0' && y == 0, 
+                    'col1': x.payload.doc.data().mood == '1' && y == 1, 
+                    'col2': x.payload.doc.data().mood == '2' && y == 2, 
+                    'col3': x.payload.doc.data().mood == '3' && y == 3, 
+                    'col4': x.payload.doc.data().mood == '4' && y == 4, 
+                    'col5': x.payload.doc.data().mood == '5' && y == 5 
+                }">
+
+                </div>
+                <div class = "moodbox md">{{getdate(x.payload.doc.id)}}</div>
+            </div>
+            <div class = "mood" *ngFor = "let x of temp">
+                <div class = "moodbox" *ngFor = "let x of moods; let i = index">
+
+                </div>
+                <div class = "moodbox md"></div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="stickypallete">
+        <div class="rect" *ngFor="let i of [0, 1, 2, 3, 4, 5]">{{moods[i]}}</div>
+    </div> -->
+</div>

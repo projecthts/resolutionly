@@ -47,23 +47,23 @@ export let regdata = [
         "type": "password",
         "patternerror": "Passwords don't match!"
     },
-    {
-        "placeholder": "Select Role",
-        "value": null,
-        "type": "dropdown",
-        "options": [{
-            "value": "1",
-            "placeholder": "Family Member"
-        },
-        {
-            "value": "2",
-            "placeholder": "Doctor"
-        },
-        {
-            "value": "3",
-            "placeholder": "Care Taker"
-        }]
+    // {
+    //     "placeholder": "Select Role",
+    //     "value": null,
+    //     "type": "dropdown",
+    //     "options": [{
+    //         "value": "1",
+    //         "placeholder": "Family Member"
+    //     },
+    //     {
+    //         "value": "2",
+    //         "placeholder": "Doctor"
+    //     },
+    //     {
+    //         "value": "3",
+    //         "placeholder": "Care Taker"
+    //     }]
         
 
-    }
+    // }
 ]
