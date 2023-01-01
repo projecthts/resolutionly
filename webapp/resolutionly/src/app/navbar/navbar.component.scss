@@ -1,0 +1,115 @@
+.main{
+    width: 100%;
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    // background-color: aqua;
+    display: flex;
+    z-index: 100;
+    overflow: hidden;
+    color: white;
+    // overflow: auto;
+}
+
+.bg{
+    height: 12vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    // z-index: 101;
+    background-color: aquamarine;
+}
+
+.bg1{
+    position: sticky;
+    top: 0;
+    background-color: aqua;
+    height: 6vh;
+}
+
+.bg2{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    height: 6vh;
+}
+
+.logo{
+    flex-basis: 10%;
+    cursor: pointer;
+}
+
+.welcome{
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+    color: #000;
+}
+
+.logout{
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    color: #000;
+
+}
+
+.logout:hover{
+    color: black;
+    background-color: white;
+}
+.options{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-evenly;
+    justify-content:center;
+    // color: white;
+    font-size: 150%;
+    align-items: center;
+    height: 100%;
+    color: #000;
+    // padding:6vw;
+}
+
+.main2{
+    background-color: white;
+}
+
+.nav-bar-item{
+    display: flex;
+    position: relative;
+    // background-color: var(--col5);
+    margin: 1vh 0;
+    padding: 0 0.5vw;
+    // border-radius: 10vh;
+    // color: white;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-bar-item:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-bar-item:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
