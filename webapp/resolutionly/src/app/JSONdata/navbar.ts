@@ -10,5 +10,9 @@ export let navbar = [
     {
         "name":"Dashboard",
         "link":"/dashboard",
+    },
+    {
+        "name":"Resolutions",
+        "link":"/resolutions",
     }
 ]

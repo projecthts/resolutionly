@@ -7,11 +7,13 @@
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-image: url("../../assets/media/images/homeland.png");
 }
 .module{
     width: 85%;
-    height: 200vh;
+    height: 300vh;
     //padding-top: 5%;
     margin-top: 20vh;
     border-radius: 25px;
