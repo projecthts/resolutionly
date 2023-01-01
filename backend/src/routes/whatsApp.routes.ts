@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { waHelperFunc } from '../support/whatsapp-send-message.js';
 import logger from '../support/logger'
+import {whatsApp} from '../ViewModels/WhatsAppUtilities'
 
 class WhatsAppRoutes {
 
@@ -21,6 +22,8 @@ class WhatsAppRoutes {
     public static setRouterMiddleWare(router: express.Router): void {
         router.route('/try')
           .get(WhatsAppRoutes.try);
+        router.route('/whatsapp')
+            .post(WhatsAppRoutes.response)
     }
 
     public static try(req: express.Request, res: express.Response){
@@ -32,6 +35,15 @@ class WhatsAppRoutes {
         })
         .catch(err => {
             logger.log(`/try failed with error ${err}`, new Date().toString(), "ERROR")
+            res.status(500).send("Error" + err);
+        })
+    }
+
+    public static response(req: express.Request, res: express.Response){
+        whatsApp.respond(req.body.body, req.body.From).then(response => {
+            res.status(200)
+        })
+        .catch(err => {
             res.status(500).send("Error" + err);
         })
     }
