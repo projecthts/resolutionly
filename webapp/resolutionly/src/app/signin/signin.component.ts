@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { logindata, regdata } from '../JsonData/signin';
+import { logindata, regdata } from '../JSONdata/signin';
 import { AuthService } from '../services/auth.service';
 
 @Component({
